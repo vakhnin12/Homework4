@@ -2,30 +2,27 @@ const x = +prompt("Input first number");
 const y = +prompt("Input second number");
 const action = prompt("Input action");
 
-let result = "";
-
-function calc() {
-    if (action !== "+" && action !== "-" && action !== "*" && action !== "/" && action !== "%" && action !== "^"){
+function calc(num1, num2, act) {
+    if (act !== "+" && act !== "-" && act !== "*" && act !== "/" && act !== "%" && act !== "^") {
         alert("Wrong action")
     }
-    if (action === "+") {
-        result = x + y;
+    if (act === "+") {
+        return num1 + num2;
     }
-    if (action === "-") {
-        result = x - y;
+    if (act === "-") {
+        return num1 - num2;
     }
-    if (action === "*") {
-        result = x * y;
+    if (act === "*") {
+        return num1 * num2;
     }
-    if (action === "/") {
-        result = x / y;
+    if (act === "/") {
+        return num1 / num2;
     }
-    if (action === "%") {
-        result = x % y;
+    if (act === "%") {
+        return num1 % num2;
     }
-    if (action === "^") {
-        result = x ** y;
+    if (act === "^") {
+        return num1 ** num2;
     }
-}
-calc();
-console.log(x + action + y + "=" + result)
+};
+console.log(x + action + y + "=", calc(x, y, action))
